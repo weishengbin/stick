@@ -7,7 +7,8 @@ on:
       - main
   schedule:
     - cron: "*/10 * * * *"
-
+permissions:
+  contents: write
 jobs:
   autogreen:
     runs-on: ubuntu-latest
