@@ -6,7 +6,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "* * * * *"
 permissions:
   contents: write
 jobs:
@@ -18,9 +18,9 @@ jobs:
 
       - name: stick
         run: |
-          git config --local user.email "lend123@icloud.com"
-          git config --local user.name "Zero00"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git pull --rebase
-          git commit --allow-empty -m "a commit a day keeps your girlfriend away"
+          date > date.txt
+          git config --local user.name "weishengbin"
+          git config --local user.email "897480227@qq.com"
+          git add date.txt
+          git commit --allow-empty -m "updated txt"
           git push
